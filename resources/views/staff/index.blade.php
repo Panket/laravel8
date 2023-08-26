@@ -1,7 +1,7 @@
 <x-bootstrap title="Staffs">
     <div class="row g-4">
         <div class="col-lg-8">
-            <a class="btn btn-success" href="{{ route('staff.create') }}"> Create New Product</a>
+            <a class="btn btn-success" href="{{ route('staff.create') }}"> Create New Staff</a>
         </div>
         <div class="col-lg-4">
             <form method="GET" action="{{ route('staff.index') }}" class="form-inline">
@@ -28,8 +28,8 @@
     <table class="table my-4">
         <tr>
             <th>#</th>
-            <th>Photo</th>
             <th>Title</th>
+            <th>Photo</th>
             <th>Birthdate</th>
             <th>Salary</th>
             <th>Phone</th>
@@ -38,15 +38,15 @@
         @foreach ($staffs as $item)
             <tr>
                 <td>{{ $item->id }}</td>
+                <td>{{ $item->title }}</td>
                 <td>
                     <img src="{{ $item->photo }}" height="100" />
                 </td>
-                <td>{{ $item->title }}</td>
                 <td>{{ $item->birthdate }}</td>
                 <td>{{ $item->salary }}</td>
                 <td>{{ $item->phone }}</td>
                 <td>
-                    <div class="d-flex justify-birthdate-around px-4">
+                    <div class="d-flex justify-content-around px-4">
                         <a class="btn btn-info" href="{{ route('staff.show', $item->id) }}">Show</a>
 
                         <a class="btn btn-primary" href="{{ route('staff.edit', $item->id) }}">Edit</a>

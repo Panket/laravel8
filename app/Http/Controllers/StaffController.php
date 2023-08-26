@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -25,7 +26,6 @@ class StaffController extends Controller
             $staffs = Staff::where('title', 'LIKE', "%$keyword%")
                 // ->orWhere('content', 'LIKE', "%$keyword%")
                 // ->orWhere('price', 'LIKE', "%$keyword%")
-                // ->orWhere('cost', 'LIKE', "%$keyword%")
                 // ->orWhere('photo', 'LIKE', "%$keyword%")
                 // ->orWhere('stock', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
@@ -35,8 +35,8 @@ class StaffController extends Controller
         }
 
         return view('staff.index', compact('staffs'));
-        // return view('staff.index2', compact('staffs'));
-        // return view('staffs.index',compact('staffs'))->with('i', (request()->input('page', 1) - 1) * 5);
+        // return view('product.index2', compact('products'));
+        // return view('products.index',compact('products'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -61,7 +61,7 @@ class StaffController extends Controller
         //validation
         $request->validate([
             'title' => 'required',
-            'price' => 'required',
+            'salary' => 'required',
             // 'photo' => 'required',
         ]);
 
@@ -121,7 +121,7 @@ class StaffController extends Controller
         //validation
         $request->validate([
             'title' => 'required',
-            'price' => 'required',
+            'salary' => 'required',
             // 'photo' => 'required',
         ]);
 

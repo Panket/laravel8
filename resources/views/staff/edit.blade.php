@@ -1,4 +1,4 @@
-<x-bootstrap title="Edit Product">
+<x-bootstrap title="Edit Staff">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="py-4">
@@ -28,8 +28,12 @@
                 <input type="text" name="title" class="form-control" value="{{ $staff->title }}" required>
             </div>
             <div class="col-md-12">
-                <strong>Price: <span class="text-danger">*</span> </strong>
-                <input type="number" name="salary" class="form-control" value="{{ $staff->salary }}" required>
+                <strong>Birthdate:</strong>
+                <input type="date" class="form-control" name="birthdate" value="{{ $staff->birthdate }}" required>
+            </div>
+            <div class="col-md-12">
+                <strong>Salary: <span class="text-danger">*</span> </strong>
+                <input type="number" name="salary" class="form-control" value="{{ $staff->salary }}">
             </div>
             <div class="col-md-12">
                 <strong>Photo: </strong>
@@ -37,12 +41,8 @@
                 <img src="{{ $staff->photo }}" height="150" />
             </div>
             <div class="col-md-12">
-                <strong>Content:</strong>
-                <textarea class="form-control" style="height:150px" name="birthdate"> {{ $staff->birthdate }}</textarea>
-            </div>
-            <div class="col-md-12">
-                <strong>Stock: </strong>
-                <input type="number" name="phone" class="form-control" value="{{ $staff->phone }}">
+                <strong>Phone: </strong>
+                <input type="text" name="phone" class="form-control" value="{{ $staff->phone }}">
             </div>
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">Submit</button>
